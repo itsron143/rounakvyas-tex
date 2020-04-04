@@ -13,7 +13,7 @@ commit_pdf_file() {
 upload_file() {
   git remote set-url origin https://itsron717:${GH_TOKEN}@github.com/itsron717/rounakvyas-tex.git
   git remote add origin https://${GH_TOKEN}@github.com/itsron717/rounakvyas-tex.git > /dev/null 2>&1
-  git push origin master --quiet 
+  git push origin master 
 }
 
 setup_git
