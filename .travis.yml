@@ -1,13 +1,14 @@
 language: shell
 sudo: required
 before_install:
-  - chmod +x scripts/generate_pdf.sh
-  - chmod +x .travis/push.sh
-  - curl -L https://raw.githubusercontent.com/aslushnikov/latex-online/master/util/latexonline > laton && chmod 755 laton
+- chmod +x scripts/generate_pdf.sh
+- chmod +x .travis/push.sh
+- curl -L https://raw.githubusercontent.com/aslushnikov/latex-online/master/util/latexonline
+  > laton && chmod 755 laton
 script:
-  - scripts/generate_pdf.sh
+- scripts/generate_pdf.sh
 after_success:
-  - .travis/push.sh
+- ".travis/push.sh"
 env:
   global:
-    secure: cIYodAgouqvzPNFRbpuZdawqHV9ITDe2zPtFjMitsXJ/3wt8GME6yYlAVvIivWSGw+x7encc7ZL/48wrMHnEJCqV11Msz3tO7ioB11F7xXBsumFH1DFFCu7kIQ62v0ycxjK/TYeIz/Bh7eRvLbMZbz1hjm1SON1Sj0kC4uzWVQtxIGNH7uVrNUooBnSd7mkwGiVwra6QXiikhPMb50nCKx97y4RGY8wSt5ThdQpUSOe4nzEJcFmKGFu640gpidP0kqWkk8vPUvbit8KMpwy3Lt8kSKWoTci3IGmPT7P3+6H1g1lUjOVIkUwD+0SUrb72lKqwlwuQdhTdj1tFVwduk1tGuIfaRzQSYrf+6snysc894rjhtaO5ihLEboyntH83tpCmn4YXKzkRMRLCaN5K140yK5zrfnyG+r351WT1tPfMhLvXUepL25npi/p8Xc0ngvkzbExbX5OOmscXOSAH+UPReP55NO/cLBkp2ZghVPrE4xi3qWXbJxlp5x9gfU81/pwd5JHkkmsdA3OQcabiWNhv+oc3fDDBphdyZ6ep8bc9cra1tfAGP02CA5EBcVmETGDG13LHlsiSYZg0xdSSD82eZRSko4oadVom3RN+uzj/J61scJa3WnUyfwZotCYbUkJaY+ph3eS+KnlfpQms1M+0SOSpERqGu+h3pYUyjBI=
+    secure: dkzLlvzJWjGG6rS9qGl3BFBxN3Il/L2s/hYeHPLW64Sj2L9xdQK3l/mEGqonLuPhw4tfNeByuo2FlYbArsKw9b51IHcrCfuHd/kuExfZuNo5j7ed4W5Zv8O4paqm9dur1/3ge2uCMzm2ueYaPmu+pv/1S2DS+hYEWuLzRzuwyg2AWtVCvRSwMJhmELmvA7f+zyRj9jsIMJaCq40wRZ/LKr7LZjAGflECedZE0s8GG+4YjO5cnxPaD33/i8ZS6d20wG1aMGY7FlzgDrEPN5+cZC0nNRKYTwfUZHdzZPZUx7gUw4q/9dgljmzATMnPDEzuF/MBhbK/V/I01cf9B3N1EMT7f88HixgRIdV/vElqNT+mWIEZHEowO3DEQUIKo5Ibcu08nP21QCWwmB7gYms1uSUSZMTrFjzURoTHe19X+2drAeA2HBZ/6zPXL7m/mY/+R5JXwH5nzlA8a/oDRgz46Ea7+W+5bxuJW6VaNeMMOQfolksLmcb1HxyEgSvFyFSUQSMTl6vp/CxqqYuhXiJZuA2EY27olZ2pxegmIerQb8EoEShf91b5laGKRU4Hj8Pc1F7BqXJ7hI9l4m6P1lu7aEw2j5spjZummzLyr8hPrk3mHCfXE1Txy7NkGZYaTShtKLEp9aHZ6ewVBDX7T6fmAt1keJvZFmpyOCEn6Hydd6U=
