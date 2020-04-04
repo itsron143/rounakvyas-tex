@@ -6,16 +6,23 @@ setup_git() {
 }
 
 commit_pdf_file() {
+  git checkout master
   git add .
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_file() {
-  git remote set-url origin https://itsron717:${GH_TOKEN}@github.com/itsron717/rounakvyas-tex.git
-  git remote add origin https://${GH_TOKEN}@github.com/itsron717/rounakvyas-tex.git > /dev/null 2>&1
-  git push origin master 
+  git remote rm origin
+  git remote add origin https://itsron717:${GH_TOKEN}@github.com/itsron717/rounakvyas-tex.git > /dev/null 2>&1
+  git push origin master --quiet > /dev/null 2>&1
 }
 
 setup_git
 commit_pdf_file
-upload_file
+
+if [ $? -eq 0 ]; then
+  echo "Uploading updated resume to GitHub"
+  upload_file
+else
+  echo "No changes in resume."
+fi
