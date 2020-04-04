@@ -6,22 +6,22 @@ setup_git() {
 }
 
 commit_pdf_file() {
-  git clone https://itsron717:${GH_TOKEN}@github.com/itsron717.github.io.git ./itsron717.github.io
-  mv ../rounakvyas-tex/pdf/rounakvyas.pdf ../itsron717.github.io/rounakvyas.pdf
-  cd itsron717.github.io
-  git add . *.pdf
-  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER. Resume Updated."
+  git checkout master
+  git add .
+  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_file() {
-  git push
+  git remote rm origin
+  git remote add origin https://itsron717:${GH_TOKEN}@github.com/itsron717/rounakvyas-tex.git > /dev/null 2>&1
+  git push origin master --quiet > /dev/null 2>&1
 }
 
 setup_git
 commit_pdf_file
 
 if [ $? -eq 0 ]; then
-  echo "Uploading updated resume to GitHub."
+  echo "Uploading updated resume to GitHub"
   upload_file
 else
   echo "No changes in resume."
