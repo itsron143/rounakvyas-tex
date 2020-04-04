@@ -1,5 +1,7 @@
 language: shell
 sudo: required
+before_install:
+  - chmod +x scripts/generate_pdf.sh
 script:
   - scripts/generate_pdf.sh
 after_success:
