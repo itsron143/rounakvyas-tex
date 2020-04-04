@@ -2,7 +2,8 @@
 
 generate(){
     if [ -f pdf/rounakvyas.pdf ]; then
-        $(rm rounakvyas.pdf)
+        $(rm pdf/rounakvyas.pdf)
+        echo "Removing previous resume."
     fi
     $(./laton cv_7.tex > /dev/null 2>&1)
     $(sleep 5)
