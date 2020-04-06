@@ -8,7 +8,7 @@ before_install:
 script:
 - scripts/generate_pdf.sh
 after_success:
-- if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then sh .travis/push.sh; else echo "Not cron. Skipping push to GitHub"; fi
+- sh .travis/push.sh
 env:
   global:
     secure: dkzLlvzJWjGG6rS9qGl3BFBxN3Il/L2s/hYeHPLW64Sj2L9xdQK3l/mEGqonLuPhw4tfNeByuo2FlYbArsKw9b51IHcrCfuHd/kuExfZuNo5j7ed4W5Zv8O4paqm9dur1/3ge2uCMzm2ueYaPmu+pv/1S2DS+hYEWuLzRzuwyg2AWtVCvRSwMJhmELmvA7f+zyRj9jsIMJaCq40wRZ/LKr7LZjAGflECedZE0s8GG+4YjO5cnxPaD33/i8ZS6d20wG1aMGY7FlzgDrEPN5+cZC0nNRKYTwfUZHdzZPZUx7gUw4q/9dgljmzATMnPDEzuF/MBhbK/V/I01cf9B3N1EMT7f88HixgRIdV/vElqNT+mWIEZHEowO3DEQUIKo5Ibcu08nP21QCWwmB7gYms1uSUSZMTrFjzURoTHe19X+2drAeA2HBZ/6zPXL7m/mY/+R5JXwH5nzlA8a/oDRgz46Ea7+W+5bxuJW6VaNeMMOQfolksLmcb1HxyEgSvFyFSUQSMTl6vp/CxqqYuhXiJZuA2EY27olZ2pxegmIerQb8EoEShf91b5laGKRU4Hj8Pc1F7BqXJ7hI9l4m6P1lu7aEw2j5spjZummzLyr8hPrk3mHCfXE1Txy7NkGZYaTShtKLEp9aHZ6ewVBDX7T6fmAt1keJvZFmpyOCEn6Hydd6U=
