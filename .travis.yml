@@ -2,7 +2,7 @@ language: shell
 sudo: required
 before_install:
 - chmod +x scripts/generate_pdf.sh
-- chmod +x .travis/push.sh
+- chmod +x push.sh
 - curl -L https://raw.githubusercontent.com/aslushnikov/latex-online/master/util/latexonline
   > laton && chmod 755 laton
 script:
